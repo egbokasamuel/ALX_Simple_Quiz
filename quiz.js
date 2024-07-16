@@ -1,16 +1,15 @@
-// quiz.js
-
 // Function to check the user's answer
 function checkAnswer() {
     // Define the correct answer
     var correctAnswer = "4";
     
     // Get the user's answer
-    var userAnswer = document.querySelector('input[name="quiz"]:checked');
+    var userAnswerElement = document.querySelector('input[name="quiz"]:checked');
     
-    if (userAnswer) {
+    if (userAnswerElement) {
+        var userAnswer = userAnswerElement.value; // Extract value from the checked radio input
         // Compare user's answer with correct answer
-        if (userAnswer.value === correctAnswer) {
+        if (userAnswer === correctAnswer) { // Correct comparison
             // Display correct feedback
             document.getElementById('feedback').textContent = "Correct! Well done.";
         } else {
